@@ -1,0 +1,20 @@
+/* Quantum Lineage is a reading/study site first — the theme's default
+   16px base reads too small for long-form prose and math-heavy text.
+   Every Hextra spacing/typography class is defined in rem, so bumping
+   the root size scales headings, body text, KaTeX, and UI consistently
+   across mobile, tablet, and desktop rather than needing per-element
+   overrides. */
+html {
+  font-size: 18px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+/* A touch more breathing room between lines of prose at this larger size. */
+.content :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  line-height: 1.8;
+}
