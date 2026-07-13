@@ -191,6 +191,38 @@
       "core": false,
       "status": "unread",
       "slug": "e1-s14"
+    },
+    {
+      "id": "E2-C01",
+      "label": "[PLACEHOLDER] Reversible Computation",
+      "epoch": 2,
+      "core": true,
+      "status": "unread",
+      "slug": "e2-c01"
+    },
+    {
+      "id": "E2-C02",
+      "label": "[PLACEHOLDER] No-Cloning",
+      "epoch": 2,
+      "core": true,
+      "status": "unread",
+      "slug": "e2-c02"
+    },
+    {
+      "id": "E3-C01",
+      "label": "[PLACEHOLDER] Universal Quantum Computation",
+      "epoch": 3,
+      "core": true,
+      "status": "unread",
+      "slug": "e3-c01"
+    },
+    {
+      "id": "E3-C02",
+      "label": "[PLACEHOLDER] The Factoring Algorithm",
+      "epoch": 3,
+      "core": true,
+      "status": "unread",
+      "slug": "e3-c02"
     }
   ],
   "edges": [

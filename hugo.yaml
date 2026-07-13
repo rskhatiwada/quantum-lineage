@@ -10,6 +10,16 @@ title: &siteName "Quantum Lineage"
 enableRobotsTXT: true
 enableGitInfo: true
 
+# Every page uses the same width: the top navbar is the only navigation
+# surface, so the docs-style left sidebar tree (which reserved a variable
+# amount of space depending on section depth) is disabled everywhere.
+cascade:
+  - _target:
+      path: "**"
+    params:
+      sidebar:
+        hide: true
+
 outputs:
   home: [html, rss]
   page: [html]
