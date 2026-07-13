@@ -20,12 +20,6 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="mb-6">
-{{< hextra/hero-button text="Read the Ontology" link="ontology" >}}
-</div>
-
-<div class="mt-6"></div>
-
 {{< hextra/feature-grid cols="2" >}}
   {{< hextra/feature-card
     title="Ontology"
