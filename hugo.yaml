@@ -1,0 +1,120 @@
+# =====================================================================
+#  Quantum Lineage — Hugo + Hextra configuration
+#  Change the site name/tagline/baseURL in ONE place: the `params` block
+#  below (siteName, params.description) and the top-level `baseURL`.
+# =====================================================================
+
+baseURL: "https://rsharmakhatiwada.github.io/quantum-lineage/"
+title: &siteName "Quantum Lineage"
+
+enableRobotsTXT: true
+enableGitInfo: true
+
+outputs:
+  home: [html, rss]
+  page: [html]
+  section: [html, rss]
+
+defaultContentLanguage: en
+languages:
+  en:
+    label: English
+    weight: 1
+    title: *siteName
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.146.0"
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)'], ['$', '$']]
+        enable: true
+
+enableInlineShortcodes: true
+
+menu:
+  main:
+    - identifier: ontology
+      name: Ontology
+      pageRef: /ontology
+      weight: 1
+    - identifier: framework
+      name: Framework
+      pageRef: /framework
+      weight: 2
+    - identifier: epochs
+      name: Epochs
+      pageRef: /epochs
+      weight: 3
+    - identifier: library
+      name: Library
+      pageRef: /library
+      weight: 4
+    - identifier: graph
+      name: Graph
+      pageRef: /graph
+      weight: 5
+    - name: Search
+      weight: 6
+      params:
+        type: search
+    - name: GitHub
+      weight: 7
+      url: "https://github.com/rsharmakhatiwada/quantum-lineage"
+      params:
+        icon: github
+
+params:
+  description: "A genealogy of quantum information science — from the EPR paradox to topological quantum computation."
+
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    width: wide
+
+  theme:
+    default: system
+    displayToggle: true
+
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: true
+    width: normal
+
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+      tokenize: forward
+
+  toc:
+    displayTags: true
+
+  highlight:
+    copy:
+      enable: true
+      display: hover
+
+  page:
+    width: normal
+
+  imageZoom:
+    enable: true
+
+  comments:
+    enable: false
