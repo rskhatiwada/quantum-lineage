@@ -4,7 +4,7 @@
 #  below (siteName, params.description) and the top-level `baseURL`.
 # =====================================================================
 
-baseURL: "https://rsharmakhatiwada.github.io/quantum-lineage/"
+baseURL: "https://rskhatiwada.github.io/quantum-lineage/"
 title: &siteName "Quantum Lineage"
 
 enableRobotsTXT: true
@@ -75,7 +75,7 @@ menu:
         type: search
     - name: GitHub
       weight: 7
-      url: "https://github.com/rsharmakhatiwada/quantum-lineage"
+      url: "https://github.com/rskhatiwada/quantum-lineage"
       params:
         icon: github
 

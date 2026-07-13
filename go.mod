@@ -1,4 +1,4 @@
-module github.com/rsharmakhatiwada/quantum-lineage
+module github.com/rskhatiwada/quantum-lineage
 
 go 1.26.5
 
