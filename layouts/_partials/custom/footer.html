@@ -1,7 +1,10 @@
-{{- /* Full site navigation, always visible (no hamburger/collapse) — this
-       is the primary way to navigate on mobile, where the top navbar only
-       shows the title. */ -}}
-<nav aria-label="Footer navigation" style="display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(128,128,128,.2);">
+{{- /* Full site navigation, always expanded (no hamburger/collapse) —
+       this is the ONLY way to navigate on mobile, where the top navbar
+       shows just the title. Hidden at md+ (hx:md:hidden) so it never
+       duplicates the top nav's own links, which only appear at md+
+       (see navbar-link.html's hx:hidden hx:md:inline-flex) — the two
+       are mutually exclusive by breakpoint, never both visible. */ -}}
+<nav aria-label="Footer navigation" class="hx:flex hx:flex-wrap hx:md:hidden" style="gap:.5rem 1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(128,128,128,.2);">
   {{- range site.Menus.main -}}
     {{- if ne .Params.type "search" -}}
       {{- $link := .URL -}}
