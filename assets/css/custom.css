@@ -18,3 +18,12 @@ html {
 .content :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   line-height: 1.8;
 }
+
+/* No hamburger menu on mobile — navigation lives in the footer instead
+   (see layouts/_partials/custom/footer.html), which is always visible
+   with no collapse/expand step. The button stays in the DOM (not
+   removed) so the theme's core/menu.js, which unconditionally queries
+   for it, doesn't throw; this just makes it invisible and unreachable. */
+.hextra-hamburger-menu {
+  display: none !important;
+}
