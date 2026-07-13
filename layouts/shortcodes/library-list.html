@@ -1,0 +1,23 @@
+{{ $epoch := .Get "epoch" }}
+{{ $pages := where site.RegularPages "Section" "library" }}
+{{ $pages = where $pages "Params.epoch" $epoch }}
+{{ $core := sort (where $pages "Params.core" true) "Params.id" }}
+{{ $supp := sort (where $pages "Params.core" false) "Params.id" }}
+<div class="hx-mt-6">
+  <h3 id="core-papers">Core Papers</h3>
+  <ul>
+    {{ range $core }}
+    <li><a href="{{ .RelPermalink }}">{{ .Params.id }} — {{ .Params.label | default .Title }}</a></li>
+    {{ else }}
+    <li><em>None migrated yet.</em></li>
+    {{ end }}
+  </ul>
+  <h3 id="supplemental-papers">Supplemental Papers</h3>
+  <ul>
+    {{ range $supp }}
+    <li><a href="{{ .RelPermalink }}">{{ .Params.id }} — {{ .Params.label | default .Title }}</a></li>
+    {{ else }}
+    <li><em>None migrated yet.</em></li>
+    {{ end }}
+  </ul>
+</div>

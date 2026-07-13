@@ -42,6 +42,11 @@ markup:
 
 enableInlineShortcodes: true
 
+taxonomies:
+  tag: tags
+  status: status
+  tier: tier
+
 menu:
   main:
     - identifier: ontology
