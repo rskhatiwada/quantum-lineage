@@ -1,0 +1,138 @@
+{{ $libraryBase := "library/e1/" | relURL }}
+{{ $graphURL := "graph.json" | relURL }}
+
+<div id="lineage-graph-legend" class="hx-mb-4" style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.85rem;"></div>
+<div id="lineage-graph-canvas" style="width:100%;height:70vh;min-height:420px;border:1px solid #d1d5db;border-radius:8px;background:var(--hx-graph-bg,#fafafa);"></div>
+<p id="lineage-graph-empty" style="display:none;margin-top:1rem;">
+  No graph data found yet — run <code>python3 scripts/build-graph.py</code> after adding or editing paper front matter.
+</p>
+<p id="lineage-graph-fallback" style="display:none;margin-top:1rem;">
+  The interactive graph could not load. Browse the same nodes and edges directly in the <a href="{{ "library" | relURL }}">Library</a>, or read the <a href="{{ "epochs/epoch-1" | relURL }}">Epoch I essay</a> for the narrative version.
+</p>
+<noscript>
+  <p>This graph requires JavaScript. Browse the same nodes and edges directly in the <a href="{{ "library" | relURL }}">Library</a>, or read the <a href="{{ "epochs/epoch-1" | relURL }}">Epoch I essay</a> for the narrative version.</p>
+</noscript>
+
+<script src="https://unpkg.com/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script>
+(function () {
+  var canvas = document.getElementById("lineage-graph-canvas");
+  var legend = document.getElementById("lineage-graph-legend");
+  var libraryBase = {{ $libraryBase }};
+
+  var EPOCH_COLORS = {
+    1: "#2563eb", 2: "#7c3aed", 3: "#db2777", 4: "#dc2626",
+    5: "#d97706", 6: "#65a30d", 7: "#0d9488", 8: "#475569"
+  };
+
+  function showFallback() {
+    canvas.style.display = "none";
+    document.getElementById("lineage-graph-fallback").style.display = "block";
+  }
+
+  function showEmpty() {
+    canvas.style.display = "none";
+    document.getElementById("lineage-graph-empty").style.display = "block";
+  }
+
+  if (typeof cytoscape === "undefined") {
+    showFallback();
+    return;
+  }
+
+  fetch({{ $graphURL }})
+    .then(function (res) { if (!res.ok) throw new Error("bad response"); return res.json(); })
+    .then(function (data) {
+      if (!data.nodes || !data.nodes.length) { showEmpty(); return; }
+
+      var epochs = Array.from(new Set(data.nodes.map(function (n) { return n.epoch; }))).sort();
+      epochs.forEach(function (e) {
+        var swatch = document.createElement("span");
+        swatch.style.display = "inline-flex";
+        swatch.style.alignItems = "center";
+        swatch.style.gap = ".35rem";
+        var dot = document.createElement("span");
+        dot.style.width = "10px";
+        dot.style.height = "10px";
+        dot.style.borderRadius = "50%";
+        dot.style.background = EPOCH_COLORS[e] || "#999";
+        dot.style.display = "inline-block";
+        swatch.appendChild(dot);
+        swatch.appendChild(document.createTextNode("Epoch " + e));
+        legend.appendChild(swatch);
+      });
+
+      var elements = data.nodes.map(function (n) {
+        return {
+          data: {
+            id: n.id,
+            label: n.id + "\n" + n.label,
+            core: n.core,
+            epoch: n.epoch,
+            slug: n.slug
+          }
+        };
+      }).concat(data.edges.map(function (e) {
+        return { data: { id: e.source + "->" + e.target, source: e.source, target: e.target } };
+      }));
+
+      var cy = cytoscape({
+        container: canvas,
+        elements: elements,
+        style: [
+          {
+            selector: "node",
+            style: {
+              "background-color": function (ele) { return EPOCH_COLORS[ele.data("epoch")] || "#999"; },
+              "label": "data(label)",
+              "font-size": 9,
+              "text-wrap": "wrap",
+              "text-valign": "center",
+              "text-halign": "center",
+              "color": "#111",
+              "text-outline-width": 1.5,
+              "text-outline-color": "#fff",
+              "width": function (ele) { return ele.data("core") ? 46 : 30; },
+              "height": function (ele) { return ele.data("core") ? 46 : 30; },
+              "border-width": function (ele) { return ele.data("core") ? 2 : 0; },
+              "border-color": "#111",
+              "shape": function (ele) { return ele.data("core") ? "ellipse" : "round-rectangle"; }
+            }
+          },
+          {
+            selector: "edge",
+            style: {
+              "width": 1.2,
+              "line-color": "#999",
+              "target-arrow-color": "#999",
+              "target-arrow-shape": "triangle",
+              "curve-style": "bezier",
+              "opacity": 0.6
+            }
+          },
+          {
+            selector: "node:selected",
+            style: { "border-width": 3, "border-color": "#111" }
+          }
+        ],
+        layout: {
+          name: "cose",
+          animate: false,
+          padding: 30,
+          nodeRepulsion: 12000,
+          idealEdgeLength: 90,
+          nodeOverlap: 20
+        }
+      });
+
+      cy.on("tap", "node", function (evt) {
+        var slug = evt.target.data("slug");
+        if (slug) { window.location.href = libraryBase + slug + "/"; }
+      });
+
+      cy.on("mouseover", "node", function () { canvas.style.cursor = "pointer"; });
+      cy.on("mouseout", "node", function () { canvas.style.cursor = "default"; });
+    })
+    .catch(function () { showFallback(); });
+})();
+</script>

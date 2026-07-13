@@ -4,4 +4,8 @@ description: "An interactive, click-through map of every paper's backward and fo
 weight: 5
 ---
 
-*The interactive lineage graph is built in Phase 3 of this project. In the meantime, browse the edges directly on each paper's entry in the [Library](/library), or read the [Epoch I](/epochs/epoch-1) essay for the narrative version of the same graph.*
+Nodes are colored by Epoch; core papers render as larger circles, supplemental papers as smaller rounded squares. Click any node to open its entry. Drag to pan, scroll to zoom.
+
+{{< lineage-graph >}}
+
+This graph is generated from the same front matter as the [Library](/library) — regenerate `static/graph.json` with `python3 scripts/build-graph.py` after editing any paper's `edges_backward` / `edges_forward`. If JavaScript fails to load, the same edges are readable directly on each paper's entry, or as prose in the [Epoch I](/epochs/epoch-1) essay.

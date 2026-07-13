@@ -1,0 +1,370 @@
+{
+  "nodes": [
+    {
+      "id": "E1-C01",
+      "label": "The Mathematical Foundations",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c01"
+    },
+    {
+      "id": "E1-C02",
+      "label": "The Completeness Dilemma",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c02"
+    },
+    {
+      "id": "E1-C03",
+      "label": "Entanglement Named, Steering Defined",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c03"
+    },
+    {
+      "id": "E1-C04",
+      "label": "The Engine",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c04"
+    },
+    {
+      "id": "E1-C05",
+      "label": "Hidden Variables Made Flesh",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c05"
+    },
+    {
+      "id": "E1-C06",
+      "label": "The Autopsy of the Impossibility Proofs",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c06"
+    },
+    {
+      "id": "E1-C07",
+      "label": "The Inequality",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c07"
+    },
+    {
+      "id": "E1-C08",
+      "label": "The Inequality Meets the Laboratory",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c08"
+    },
+    {
+      "id": "E1-C09",
+      "label": "Erasure Costs",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c09"
+    },
+    {
+      "id": "E1-C10",
+      "label": "The Capacity Bound",
+      "epoch": 1,
+      "core": true,
+      "status": "unread",
+      "slug": "e1-c10"
+    },
+    {
+      "id": "E1-S01",
+      "label": "The statistical interpretation",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s01"
+    },
+    {
+      "id": "E1-S02",
+      "label": "The competing formalism",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s02"
+    },
+    {
+      "id": "E1-S03",
+      "label": "The ignored objection",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s03"
+    },
+    {
+      "id": "E1-S04",
+      "label": "The reply to EPR",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s04"
+    },
+    {
+      "id": "E1-S05",
+      "label": "The spin-singlet EPR form",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s05"
+    },
+    {
+      "id": "E1-S06",
+      "label": "Frame functions are Born rules",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s06"
+    },
+    {
+      "id": "E1-S07",
+      "label": "The finite constructive proof of contextuality",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s07"
+    },
+    {
+      "id": "E1-S08",
+      "label": "The Friend",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s08"
+    },
+    {
+      "id": "E1-S09",
+      "label": "Classical information theory",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s09"
+    },
+    {
+      "id": "E1-S10",
+      "label": "The quantum bound on CHSH",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s10"
+    },
+    {
+      "id": "E1-S11",
+      "label": "First experimental CHSH-type violation",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s11"
+    },
+    {
+      "id": "E1-S12",
+      "label": "Quantum detection and estimation theory",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s12"
+    },
+    {
+      "id": "E1-S13",
+      "label": "The relative-state formulation",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s13"
+    },
+    {
+      "id": "E1-S14",
+      "label": "Conjugate coding",
+      "epoch": 1,
+      "core": false,
+      "status": "unread",
+      "slug": "e1-s14"
+    }
+  ],
+  "edges": [
+    {
+      "source": "E1-C01",
+      "target": "E1-C02"
+    },
+    {
+      "source": "E1-C01",
+      "target": "E1-C03"
+    },
+    {
+      "source": "E1-C01",
+      "target": "E1-C05"
+    },
+    {
+      "source": "E1-C01",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-C01",
+      "target": "E1-C09"
+    },
+    {
+      "source": "E1-C01",
+      "target": "E1-C10"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-C03"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-C05"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-C07"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-S04"
+    },
+    {
+      "source": "E1-C02",
+      "target": "E1-S05"
+    },
+    {
+      "source": "E1-C04",
+      "target": "E1-C08"
+    },
+    {
+      "source": "E1-C04",
+      "target": "E1-C09"
+    },
+    {
+      "source": "E1-C04",
+      "target": "E1-S09"
+    },
+    {
+      "source": "E1-C05",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-C05",
+      "target": "E1-C07"
+    },
+    {
+      "source": "E1-C05",
+      "target": "E1-S05"
+    },
+    {
+      "source": "E1-C06",
+      "target": "E1-C07"
+    },
+    {
+      "source": "E1-C06",
+      "target": "E1-S07"
+    },
+    {
+      "source": "E1-C07",
+      "target": "E1-C08"
+    },
+    {
+      "source": "E1-C07",
+      "target": "E1-S08"
+    },
+    {
+      "source": "E1-C07",
+      "target": "E1-S10"
+    },
+    {
+      "source": "E1-C07",
+      "target": "E1-S11"
+    },
+    {
+      "source": "E1-C08",
+      "target": "E1-S10"
+    },
+    {
+      "source": "E1-C08",
+      "target": "E1-S11"
+    },
+    {
+      "source": "E1-S01",
+      "target": "E1-C01"
+    },
+    {
+      "source": "E1-S02",
+      "target": "E1-C01"
+    },
+    {
+      "source": "E1-S03",
+      "target": "E1-C01"
+    },
+    {
+      "source": "E1-S03",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-S04",
+      "target": "E1-C02"
+    },
+    {
+      "source": "E1-S05",
+      "target": "E1-C02"
+    },
+    {
+      "source": "E1-S05",
+      "target": "E1-C05"
+    },
+    {
+      "source": "E1-S05",
+      "target": "E1-C07"
+    },
+    {
+      "source": "E1-S05",
+      "target": "E1-C08"
+    },
+    {
+      "source": "E1-S06",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-S07",
+      "target": "E1-C06"
+    },
+    {
+      "source": "E1-S09",
+      "target": "E1-C04"
+    },
+    {
+      "source": "E1-S09",
+      "target": "E1-C09"
+    },
+    {
+      "source": "E1-S09",
+      "target": "E1-C10"
+    },
+    {
+      "source": "E1-S10",
+      "target": "E1-C07"
+    },
+    {
+      "source": "E1-S10",
+      "target": "E1-C08"
+    },
+    {
+      "source": "E1-S12",
+      "target": "E1-C10"
+    }
+  ]
+}
