@@ -21,30 +21,30 @@ layout: hextra-home
 </div>
 
 <div class="mb-6">
-{{< hextra/hero-button text="Read the Ontology" link="/ontology" >}}
+{{< hextra/hero-button text="Read the Ontology" link="ontology" >}}
 </div>
 
 <div class="mt-6"></div>
 
-{{< hextra/feature-grid >}}
+{{< hextra/feature-grid cols="2" >}}
   {{< hextra/feature-card
     title="Ontology"
     subtitle="Eight Epochs of quantum information science, each defined by the mathematical object at its center and the crisis that forced it."
-    link="/ontology"
+    link="ontology"
   >}}
   {{< hextra/feature-card
     title="Framework"
     subtitle="The entry template, identifier conventions, and the three Replication Tiers that make this library a directed graph rather than a pile of summaries."
-    link="/framework"
+    link="framework"
   >}}
   {{< hextra/feature-card
     title="Epochs"
     subtitle="Core and Supplemental papers, organized by the historical Epoch that produced them."
-    link="/epochs"
+    link="epochs"
   >}}
   {{< hextra/feature-card
     title="Lineage Graph"
     subtitle="An interactive, click-through map of every paper's backward and forward edges."
-    link="/graph"
+    link="graph"
   >}}
 {{< /hextra/feature-grid >}}

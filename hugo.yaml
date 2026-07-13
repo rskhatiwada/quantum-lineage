@@ -73,11 +73,6 @@ menu:
       weight: 6
       params:
         type: search
-    - name: GitHub
-      weight: 7
-      url: "https://github.com/rskhatiwada/quantum-lineage"
-      params:
-        icon: github
 
 params:
   description: "A genealogy of quantum information science — from the EPR paradox to topological quantum computation."
