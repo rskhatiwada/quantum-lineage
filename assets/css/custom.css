@@ -13,6 +13,26 @@ html {
   }
 }
 
+/* Hextra derives every spacing/sizing utility (padding, margin, gap,
+   width, height, etc.) from this single base unit, kept entirely
+   separate from the --hx-text-* font-size scale above. Shrinking it by
+   15% zooms out the layout — tighter spacing, smaller components, more
+   fits on screen — without changing any font-size, so text stays the
+   same visual size. */
+:root {
+  --hx-spacing: 0.2125rem;
+}
+
+/* Narrows the main page wrapper (sidebar + TOC + article, see Hextra's
+   single.html) 10% below the theme's "normal" preset (80rem -> 72rem).
+   Navbar and footer use their own separate --hextra-max-navbar-width /
+   --hextra-max-footer-width variables (set via site.Params.navbar.width
+   and site.Params.footer.width in hugo.yaml, both "wide" = 90rem), so
+   they're unaffected and stay equal to each other. */
+:root {
+  --hextra-max-page-width: 72rem;
+}
+
 /* Article body text one step up from the theme's default (1rem ->
    1.125rem, same jump as Tailwind's text-base -> text-lg), plus a touch
    more line-height for readability at the larger size. Headings, code,
