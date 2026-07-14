@@ -2,6 +2,7 @@
 title: "Epoch V (1977–2003): The Topological Turn"
 description: "Kitaev's toric code and Freedman–Kitaev–Larsen–Wang proved that topological phases are fault-tolerant quantum memories and processors."
 weight: 5
+aliases: ["/epochs/epoch-5/"]
 epoch: 5
 stub: true
 ---
@@ -12,4 +13,4 @@ This Epoch has a long fuse and a short detonation. The fuse: Leinaas–Myrheim (
 
 *This Epoch has not yet been processed into core and supplemental entries. This page carries only the summary from the founding blueprint.*
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.

@@ -1,0 +1,70 @@
+{{- /* Overrides Hextra's render-link hook to additionally resolve
+       Obsidian-style relative links so content/ can be opened directly
+       as an Obsidian vault with working backlinks/graph, while Hugo
+       still builds the correct site URLs from the same files:
+         - a bare filename, e.g. "e1-c06.md" — resolved by matching the
+           content file's name, exactly like Obsidian's own default
+           "shortest path" link resolution (every library/epoch/top-level
+           filename in this site is unique, so this never collides).
+         - a vault-root-relative path, e.g. "library/e1/_index.md" — used
+           only for section indexes, since "_index.md" itself is not a
+           unique filename across the vault.
+       Once resolved, $dest is rewritten to an absolute "/..." permalink
+       and $resolved is set so the theme's original absolute-path
+       resolution logic below is skipped instead of re-processing it. */ -}}
+{{- $dest := .Destination -}}
+{{- $resolved := false -}}
+
+{{- if and $dest (strings.HasSuffix $dest ".md") (not (strings.HasPrefix $dest "http")) -}}
+  {{- $stem := $dest | strings.TrimSuffix ".md" -}}
+  {{- $isIndex := or (strings.HasSuffix $stem "/_index") (strings.HasSuffix $stem "/index") (eq $stem "_index") (eq $stem "index") -}}
+  {{- $target := "" -}}
+  {{- if $isIndex -}}
+    {{- $section := $stem | strings.TrimSuffix "/_index" | strings.TrimSuffix "/index" -}}
+    {{- $section = cond (or (eq $section "_index") (eq $section "index")) "" $section -}}
+    {{- if eq $section "" -}}
+      {{- $target = site.Home -}}
+    {{- else -}}
+      {{- $target = site.GetPage (printf "/%s" $section) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- range site.RegularPages -}}
+      {{- if eq .File.BaseFileName $stem -}}{{- $target = . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $target -}}
+    {{- $dest = .RelPermalink -}}
+    {{- $resolved = true -}}
+  {{- else -}}
+    {{- warnf "render-link: could not resolve %q referenced from %s" $dest .Page.File.Path -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $resolved -}}
+  {{- $url := urls.Parse $dest -}}
+  {{- if and $dest (hasPrefix $dest "/") -}}
+    {{- with or (.PageInner.GetPage $url.Path) (.PageInner.Resources.Get $url.Path) (resources.Get $url.Path) -}}
+      {{- $query := cond $url.RawQuery (printf "?%s" $url.RawQuery) "" -}}
+      {{- $fragment := cond $url.Fragment (printf "#%s" $url.Fragment) "" -}}
+      {{- $dest = printf "%s%s%s" .RelPermalink $query $fragment -}}
+    {{- else -}}
+      {{- $hasBasePrefix := and (ne site.Home.RelPermalink "/") (hasPrefix $dest site.Home.RelPermalink) -}}
+      {{- if not $hasBasePrefix -}}
+        {{- $dest = (relURL (strings.TrimPrefix "/" $dest)) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with . -}}
+{{- $isExternal := strings.HasPrefix .Destination "http" -}}
+<a href="{{ $dest | safeURL }}"
+   {{- with .Title -}}title="{{ . }}"{{- end -}}
+   {{- if $isExternal -}}target="_blank" rel="noopener"{{- end -}}
+>
+  {{- .Text | safeHTML -}}
+  {{- if and .Page.Site.Params.externalLinkDecoration $isExternal -}}
+    {{- partial "utils/icon.html" (dict "name" "arrow-up-right" "attributes" `class="hx:inline hx:rtl:rotate-270 hx:align-baseline" height="1em" aria-hidden="true"`) -}}
+  {{- end -}}
+</a>
+{{- end -}}

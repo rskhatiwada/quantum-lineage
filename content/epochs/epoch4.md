@@ -2,6 +2,7 @@
 title: "Epoch IV (1995–2000): The Decoherence Crisis and the Theory of Fault Tolerance"
 description: "No-cloning appeared to forbid error correction; Shor and Steane broke that intuition, and Gottesman recast everything as stabilizer algebra."
 weight: 4
+aliases: ["/epochs/epoch-4/"]
 epoch: 4
 stub: true
 ---
@@ -12,4 +13,4 @@ The crisis was stark: no-cloning appeared to forbid error correction, and contin
 
 *This Epoch has not yet been processed into core and supplemental entries. This page carries only the summary from the founding blueprint.*
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.

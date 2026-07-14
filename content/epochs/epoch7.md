@@ -2,6 +2,7 @@
 title: "Epoch VII (2016–present): Monitored, Adaptive, and NISQ-Era Dynamics"
 description: "Circuits with interleaved unitaries and measurements exhibit measurement-induced phase transitions invisible to the averaged density matrix."
 weight: 7
+aliases: ["/epochs/epoch-7/"]
 epoch: 7
 stub: true
 ---
@@ -12,4 +13,4 @@ Preskill's NISQ framing (2018) redefined the near term. Independently, a new sta
 
 *This Epoch has not yet been processed into core and supplemental entries. This page carries only the summary from the founding blueprint.*
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.

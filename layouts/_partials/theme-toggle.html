@@ -1,0 +1,32 @@
+{{- /* Overrides the theme's dropdown (light/dark/system) with a plain
+       one-click light/dark switch: no menu, no "system" option once
+       clicked, and the icon + label always reflect the CURRENT active
+       appearance (sun/"Light" while light, moon/"Dark" while dark).
+       Paired with the simplified assets/js/core/theme.js. Color is set
+       inline via light-dark() rather than relying on faint Tailwind
+       gray shades, since the low-contrast default was reported as
+       "not visible" in dark mode. */ -}}
+{{- $iconHeight := .iconHeight | default 16 -}}
+{{- $hideLabel := .hideLabel -}}
+{{- $class := .class | default "hx:h-7 hx:px-2 hx:font-medium hx:transition-colors" -}}
+
+{{- $toggleTheme := (T "toggleTheme") | default "Toggle theme" -}}
+{{- $light := (T "light") | default "Light" -}}
+{{- $dark := (T "dark") | default "Dark" -}}
+
+<button
+  title="{{ $toggleTheme }}"
+  class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md {{ $class }} hx:flex hx:items-center hx:justify-center hx:gap-1.5"
+  type="button"
+  aria-label="{{ $toggleTheme }}"
+  style="color: light-dark(#1f2937, #e5e7eb);"
+>
+  <span class="theme-icon-light hx:flex hx:items-center hx:gap-1.5">
+    {{- partial "utils/icon.html" (dict "name" "sun" "attributes" (printf "height=%d" $iconHeight)) -}}
+    {{- if not $hideLabel }}<span>{{ $light }}</span>{{ end -}}
+  </span>
+  <span class="theme-icon-dark hx:flex hx:items-center hx:gap-1.5">
+    {{- partial "utils/icon.html" (dict "name" "moon" "attributes" (printf "height=%d" $iconHeight)) -}}
+    {{- if not $hideLabel }}<span>{{ $dark }}</span>{{ end -}}
+  </span>
+</button>

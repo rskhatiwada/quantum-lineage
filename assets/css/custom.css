@@ -1,21 +1,25 @@
-/* Quantum Lineage is a reading/study site first — the theme's default
-   16px base reads too small for long-form prose and math-heavy text.
-   Every Hextra spacing/typography class is defined in rem, so bumping
-   the root size scales headings, body text, KaTeX, and UI consistently
+/* Every Hextra spacing/typography class is defined in rem, so the root
+   font-size scales headings, body text, KaTeX, and UI consistently
    across mobile, tablet, and desktop rather than needing per-element
-   overrides. */
+   overrides. Sized to match what the previous 18px/19px base looked
+   like at 80% browser zoom (the size the user actually wants). */
 html {
-  font-size: 18px;
+  font-size: 14.4px;
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 19px;
+    font-size: 15.2px;
   }
 }
 
-/* A touch more breathing room between lines of prose at this larger size. */
-.content :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+/* Article body text one step up from the theme's default (1rem ->
+   1.125rem, same jump as Tailwind's text-base -> text-lg), plus a touch
+   more line-height for readability at the larger size. Headings, code,
+   and tables keep their own explicit sizes, so this only affects running
+   prose and list text. */
+.content :where(p, li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-size: 1.125rem;
   line-height: 1.8;
 }
 
@@ -26,4 +30,58 @@ html {
    for it, doesn't throw; this just makes it invisible and unreachable. */
 .hextra-hamburger-menu {
   display: none !important;
+}
+
+/* The theme hides the top navbar's search box below md and expects the
+   hamburger-menu sidebar to carry a mobile copy of it instead — but that
+   sidebar is permanently translated off-screen now that the hamburger
+   that would reveal it is hidden (above). Show the navbar search box on
+   mobile too, sized to fit next to the logo/title. */
+nav .hextra-search-wrapper {
+  display: block !important;
+}
+
+@media (max-width: 767px) {
+  nav .hextra-search-wrapper {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 9rem;
+  }
+}
+
+/* Positions the magnifying-glass icon inside the search input (see
+   layouts/_partials/search.html). Plain CSS, not a Tailwind utility
+   class: Tailwind's content scanner here only picks up class names
+   that already existed in the Hextra module's own shipped templates,
+   so any brand-new "hx:*" utility introduced in an overriding project
+   partial silently compiles to no CSS at all. */
+.hextra-search-icon {
+  position: absolute;
+  left: 0.625rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: light-dark(#6b7280, #9ca3af);
+}
+
+/* One-click theme toggle (see layouts/_partials/theme-toggle.html):
+   shows the icon+label pair matching the CURRENT appearance. Same
+   Tailwind-scanning limitation as above, so this is plain CSS keyed
+   off the `.dark`/`.light` class the theme already sets on <html>. */
+.hextra-theme-toggle .theme-icon-dark {
+  display: none;
+}
+
+.dark .hextra-theme-toggle .theme-icon-dark {
+  display: flex;
+}
+
+.dark .hextra-theme-toggle .theme-icon-light {
+  display: none;
+}
+
+.hextra-theme-toggle:hover {
+  background: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.08));
 }

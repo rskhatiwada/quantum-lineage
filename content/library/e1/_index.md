@@ -4,6 +4,6 @@ description: "The 10 core papers and 14 supplemental papers of Epoch I, sorted b
 weight: 1
 ---
 
-See [Epoch I](/epochs/epoch-1) for the narrative essay this library section supports.
+See [Epoch I](epoch1.md) for the narrative essay this library section supports.
 
 {{< library-list epoch=1 >}}

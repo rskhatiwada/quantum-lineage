@@ -14,7 +14,7 @@ enableGitInfo: true
 # surface, so the docs-style left sidebar tree (which reserved a variable
 # amount of space depending on section depth) is disabled everywhere.
 cascade:
-  - _target:
+  - target:
       path: "**"
     params:
       sidebar:
@@ -89,8 +89,13 @@ params:
 
   navbar:
     displayTitle: true
-    displayLogo: false
+    displayLogo: true
     width: wide
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+      width: 22
+      height: 22
 
   theme:
     default: system

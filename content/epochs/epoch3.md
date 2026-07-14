@@ -2,6 +2,7 @@
 title: "Epoch III (1985–1994): Quantum Computation Becomes a Theory"
 description: "Deutsch defined universal quantum computation; Shor detonated the oracle separations into the factoring algorithm."
 weight: 3
+aliases: ["/epochs/epoch-3/"]
 epoch: 3
 stub: true
 ---
@@ -16,4 +17,4 @@ Deutsch (1985) defined universal quantum computation; Deutsch–Jozsa (1992), Be
 
 {{< library-list epoch=3 >}}
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.

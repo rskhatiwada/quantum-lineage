@@ -4,7 +4,7 @@
 
 Quantum Lineage is a lineage-tracked personal research library: roughly 1,000 papers in quantum information science, organized into eight historical Epochs, each defined by the mathematical object at the center of the field and the crisis that forced it into existence. Every paper is a node in a directed graph — its entry states precisely which prior formal structure it consumed and which later construction it enabled — rather than a standalone summary.
 
-The founding document is the "Russell Blueprint," which defines the Epoch ontology, the per-paper entry template, and the three-tier Active Replication program (analytic derivation → numerical experiment → cluster-scale simulation) used to certify that a paper has actually been understood, not just read.
+The founding document is the Quantum Lineage Framework, which defines the Epoch ontology, the per-paper entry template, and the three-tier Active Replication program (analytic derivation → numerical experiment → cluster-scale simulation) used to certify that a paper has actually been understood, not just read.
 
 Built with [Hugo](https://gohugo.io/) and the [Hextra](https://github.com/imfing/hextra) theme, authored as plain Markdown so the `content/` directory doubles as an [Obsidian](https://obsidian.md/) vault.
 

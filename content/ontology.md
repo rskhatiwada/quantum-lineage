@@ -8,7 +8,7 @@ weight: 1
 
 The field is divided into eight Epochs. The boundaries are chosen at points where the mathematical object at the center of the field changed, which is the only historically stable criterion. Chronological overlap between Epochs is real and is noted; lineage, not date, assigns a paper to an Epoch.
 
-Each Epoch has its own landing page (see [Epochs](/epochs)) with the full essay: the crisis that forced it, the central mathematical object, and why the mathematics had to evolve. This page fixes the table at a glance and the argument that the lineage is not an accident.
+Each Epoch has its own landing page (see [Epochs](epochs/_index.md)) with the full essay: the crisis that forced it, the central mathematical object, and why the mathematics had to evolve. This page fixes the table at a glance and the argument that the lineage is not an accident.
 
 | Epoch | Span | Central object | Crisis resolved |
 |---|---|---|---|
@@ -25,4 +25,4 @@ Each Epoch has its own landing page (see [Epochs](/epochs)) with the full essay:
 
 Read backward, the lineage is not an accident. Fault tolerance (IV) demanded physical systems whose error correction is native rather than imposed; the classification program (VI) proved such systems are phases of matter with computable invariants; the anyon program (V) proved their excitations compute; and the monitored-dynamics program (VII) proved that measurement itself — the original crisis of Epoch I — can be the constructive agent that prepares and protects these phases. The library's thousand papers are the documentation of a single argument: *the measurement problem, pursued with sufficient rigor, becomes the measurement solution.*
 
-See the [Framework](/framework) for how each paper below is documented, and [Epoch I](/epochs/epoch-1) for the first Epoch executed in full.
+See the [Framework](framework.md) for how each paper below is documented, and [Epoch I](epoch1.md) for the first Epoch executed in full.

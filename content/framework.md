@@ -60,6 +60,6 @@ NOTES AND CROSS-EXAMINATION: standing objections, errors later
 found, modern hindsight.
 ```
 
-Two disciplinary rules. First, backward edges must point to formal structures, not vibes: "uses the density operator of [E1-C01](/library/e1/e1-c01)" is an edge; "inspired by the Copenhagen spirit" is not. Second, forward edges are written in pencil: they are revised every time a later Epoch is processed, and the revision dates are kept. A lineage graph that never gets re-drawn is a decoration, not an instrument.
+Two disciplinary rules. First, backward edges must point to formal structures, not vibes: "uses the density operator of [E1-C01](e1-c01.md)" is an edge; "inspired by the Copenhagen spirit" is not. Second, forward edges are written in pencil: they are revised every time a later Epoch is processed, and the revision dates are kept. A lineage graph that never gets re-drawn is a decoration, not an instrument.
 
-See also: the [Ontology](/ontology) for the eight Epochs this template is applied across, and the [Lineage Graph](/graph) for the resulting directed graph rendered interactively.
+See also: the [Ontology](ontology.md) for the eight Epochs this template is applied across, and the [Lineage Graph](graph.md) for the resulting directed graph rendered interactively.

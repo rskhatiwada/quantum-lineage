@@ -2,6 +2,7 @@
 title: "Epoch II (1970–1984): Reversibility, Cloning, and the First Quantum Protocols"
 description: "Bennett proved computation can be made logically and thermodynamically reversible; Wootters–Zurek and Dieks proved the no-cloning theorem."
 weight: 2
+aliases: ["/epochs/epoch-2/"]
 epoch: 2
 stub: true
 ---
@@ -16,4 +17,4 @@ Bennett (1973), building on Landauer, proved computation can be made logically a
 
 {{< library-list epoch=2 >}}
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.

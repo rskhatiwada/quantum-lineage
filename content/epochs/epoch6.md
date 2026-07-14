@@ -2,6 +2,7 @@
 title: "Epoch VI (1997–2015): Classification and the Hunt for Majoranas"
 description: "Altland–Zirnbauer's tenfold way organized all free-fermion topological phases into the periodic table."
 weight: 6
+aliases: ["/epochs/epoch-6/"]
 epoch: 6
 stub: true
 ---
@@ -12,4 +13,4 @@ Altland–Zirnbauer (1997) completed Dyson's threefold way into ten symmetry cla
 
 *This Epoch has not yet been processed into core and supplemental entries. This page carries only the summary from the founding blueprint.*
 
-See [Epoch I](/epochs/epoch-1) for the fully executed Epoch, and the [Ontology](/ontology) for how this Epoch fits the larger lineage.
+See [Epoch I](epoch1.md) for the fully executed Epoch, and the [Ontology](ontology.md) for how this Epoch fits the larger lineage.
